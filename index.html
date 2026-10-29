@@ -1,0 +1,1293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>TumTum House</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Digital guides, the 30 Days with God series and printable posters that help you learn, build and grow. Made in the Netherlands. Every order gives back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap">
+<style>
+/* ============================================================
+   TUMTUM HOUSE — design tokens
+   Layout: one paper sheet with full-bleed bands. The hero re-creates
+   the sliced TUM / TUM logo in live type; cobalt is the single accent.
+   ============================================================ */
+:root{
+  --paper:#F5F3EE; --paper-2:#ECE9E2; --paper-3:#DEDAD1;
+  --ink:#15151A; --ink-2:#55555F; --ink-3:#8B8B96;
+  --line:rgba(21,21,26,.14); --line-strong:rgba(21,21,26,.42);
+  --accent:#1E3BFF; --accent-2:#1430D6; --on-accent:#FFFFFF;
+  --band:#15151A; --on-band:#F5F3EE; --on-band-2:#B3B3BD; --band-line:rgba(245,243,238,.18);
+  --wall-1:#ECE7DF; --wall-2:#D9D2C7; --floor:#B79F86; --floor-2:#9E8670;
+  --shadow:0 30px 60px -30px rgba(21,21,26,.35);
+  --shadow-sm:0 10px 30px -14px rgba(21,21,26,.35);
+  --font-display:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --font-body:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --gl:max(16px,4vw,env(safe-area-inset-left,0px));
+  --gr:max(16px,4vw,env(safe-area-inset-right,0px));
+  --nav-h:68px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121216; --paper-2:#1A1A21; --paper-3:#26262E;
+    --ink:#F2F0EA; --ink-2:#B4B4BE; --ink-3:#7F7F8B;
+    --line:rgba(242,240,234,.14); --line-strong:rgba(242,240,234,.45);
+    --accent:#6F7DFF; --accent-2:#8D99FF; --on-accent:#0B0B12;
+    --band:#0A0A0E; --on-band:#F2F0EA; --on-band-2:#A9A9B4; --band-line:rgba(242,240,234,.16);
+    --shadow:0 30px 60px -30px rgba(0,0,0,.8); --shadow-sm:0 10px 30px -14px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121216; --paper-2:#1A1A21; --paper-3:#26262E;
+  --ink:#F2F0EA; --ink-2:#B4B4BE; --ink-3:#7F7F8B;
+  --line:rgba(242,240,234,.14); --line-strong:rgba(242,240,234,.45);
+  --accent:#6F7DFF; --accent-2:#8D99FF; --on-accent:#0B0B12;
+  --band:#0A0A0E; --on-band:#F2F0EA; --on-band-2:#A9A9B4; --band-line:rgba(242,240,234,.16);
+  --shadow:0 30px 60px -30px rgba(0,0,0,.8); --shadow-sm:0 10px 30px -14px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img,canvas,svg{max-width:100%}
+img,canvas{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;margin:0}
+input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1320px;margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr)}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ink-2);margin:0 0 14px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(36px,5.2vw,68px)}
+h3{font-size:clamp(22px,2.4vw,30px)}
+p{margin:0}
+.lead{font-size:clamp(17px,1.4vw,20px);color:var(--ink-2);max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:background .25s,color .25s,border-color .25s,box-shadow .25s;white-space:nowrap;will-change:transform}
+.btn:hover{box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-sm{padding:9px 14px;font-size:13px}
+.btn.is-off{opacity:.5;pointer-events:none}
+.section{padding-block:clamp(72px,10vw,140px)}
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:clamp(28px,4vw,56px)}
+.section-head>div{min-width:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* ---------- chrome: progress bar, toast ---------- */
+.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:2px;width:100%;transform-origin:left;transform:scaleX(0);background:var(--accent);z-index:70;pointer-events:none}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:opacity .35s,transform .35s;z-index:85;pointer-events:none;white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.fly{position:fixed;z-index:90;pointer-events:none;border-radius:4px;overflow:hidden;box-shadow:var(--shadow);inset:auto}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:16px;padding-left:var(--gl);padding-right:var(--gr);transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+.nav.is-scrolled{background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.brand{font-weight:700;letter-spacing:.32em;font-size:12px;text-decoration:none;text-transform:uppercase;white-space:nowrap}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:600;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-actions{display:flex;gap:4px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;position:relative;transition:background .2s}
+.icon-btn:hover{background:var(--paper-2)}
+.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.bag-count{position:absolute;top:3px;right:1px;min-width:18px;height:18px;border-radius:9px;background:var(--accent);color:var(--on-accent);font-size:11px;font-weight:700;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.bag-count.show{transform:scale(1)}
+.burger{display:none}
+@media (max-width:880px){.nav-links{display:none}.burger{display:grid}}
+.menu{position:fixed;inset:0;background:var(--paper);z-index:45;display:flex;flex-direction:column;justify-content:center;gap:4px;padding-left:var(--gl);padding-right:var(--gr);padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px));transform:translateY(-100%);transition:transform .55s cubic-bezier(.76,0,.24,1),visibility 0s .55s;visibility:hidden}
+.menu.open{transform:none;visibility:visible;transition:transform .55s cubic-bezier(.76,0,.24,1),visibility 0s 0s}
+.menu a{font-family:var(--font-display);font-size:clamp(38px,9.5vw,72px);text-decoration:none;line-height:1.1;display:block;padding:8px 0;border-bottom:1px solid var(--line)}
+.menu small{display:block;margin-top:24px;color:var(--ink-2);font-size:14px}
+
+/* ---------- hero ---------- */
+.hero{padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + clamp(20px,4vw,56px));position:relative}
+.hero-inner{display:grid;gap:clamp(22px,3vw,40px);text-align:center;justify-items:center;position:relative;z-index:1}
+.mark{font-family:var(--font-display);font-weight:800;font-size:clamp(118px,38vw,360px);line-height:.82;letter-spacing:.02em;user-select:none;width:100%;position:relative;color:var(--ink)}
+.mark-line{height:.48em;overflow:hidden;will-change:transform}
+.mark-line span{display:block;height:.82em}
+.mark-bot{height:.40em}
+.mark-bot span{margin-top:-.42em}
+.mark-gap{height:.16em;display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:clamp(10px,.082em,30px);letter-spacing:.42em;text-indent:.42em;line-height:1;color:var(--ink);text-transform:uppercase}
+.hero-title{font-size:clamp(34px,5.4vw,74px);font-weight:400;font-style:italic;display:flex;gap:.3em;justify-content:center;flex-wrap:wrap}
+.hero-title .w{display:block;overflow:hidden;padding-bottom:.1em}
+.hero-title .w span{display:block}
+.hero-sub{max-width:52ch;text-align:center}
+.rot{display:inline-grid;vertical-align:bottom;overflow:hidden;height:1.4em;text-align:left;font-style:italic;font-family:var(--font-display);font-size:1.15em;color:var(--ink)}
+.rot span{grid-area:1/1;white-space:nowrap;opacity:0;transform:translateY(100%);transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.rot span.on{opacity:1;transform:none}
+.rot span.off{opacity:0;transform:translateY(-100%)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.feat{display:inline-flex;align-items:center;gap:10px;font-size:13px;border:1px solid var(--line-strong);border-radius:999px;padding:8px 14px 8px 8px;text-decoration:none;transition:background .2s;max-width:100%}
+.feat span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.feat:hover{background:var(--paper-2)}
+.feat i{width:22px;height:22px;flex:none;border-radius:50%;background:var(--accent);display:inline-grid;place-items:center;color:var(--on-accent);font-style:normal;font-size:11px;font-weight:700}
+.floats{position:absolute;inset:0;pointer-events:none}
+.fl{position:absolute;width:clamp(120px,11vw,170px);will-change:transform}
+.fl-in{aspect-ratio:3/4;border-radius:4px;overflow:hidden;box-shadow:var(--shadow);position:relative;animation:floaty 7s ease-in-out infinite;transform:rotate(var(--r,0deg))}
+.fl-1{left:3%;top:16%;--r:-6deg}
+.fl-2{right:4%;top:10%;--r:5deg}.fl-2 .fl-in{animation-delay:-2.4s}
+.fl-3{right:14%;bottom:4%;--r:-3deg}.fl-3 .fl-in{animation-delay:-4.6s}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -14px}}
+@media (max-width:1040px){.floats{display:none}}
+.scroll-cue{width:1px;height:48px;background:var(--line-strong);position:relative;overflow:hidden;margin-top:8px}
+.scroll-cue::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateY(-100%);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{to{transform:translateY(100%)}}
+
+/* ---------- ticker ---------- */
+.ticker{border-block:1px solid var(--line);padding-block:14px;overflow:hidden;margin-top:clamp(40px,6vw,80px)}
+.ticker-track{display:flex;width:max-content;animation:ticker 38s linear infinite}
+.ticker-group{display:flex}
+.ticker-item{display:inline-flex;align-items:center;gap:22px;padding-right:22px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.ticker-item i{font-style:normal;color:var(--accent);font-family:var(--font-display);font-size:14px}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track,.fl-in,.scroll-cue::after,.stamp svg{animation:none}}
+
+/* ---------- pillars (sticky stack) ---------- */
+.pillars{display:grid;gap:18px;padding-block:clamp(56px,8vw,120px)}
+.pillar{position:sticky;top:calc(var(--nav-h) + 16px + env(safe-area-inset-top,0px));border-radius:12px;padding:clamp(26px,4vw,56px);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center;min-height:min(74vh,620px);border:1px solid var(--line);overflow:hidden;transform-origin:50% 0;background:var(--paper-2)}
+.pillar:nth-child(2){top:calc(var(--nav-h) + 34px + env(safe-area-inset-top,0px))}
+.pillar:nth-child(3){top:calc(var(--nav-h) + 52px + env(safe-area-inset-top,0px))}
+.pillar-ink{background:var(--band);color:var(--on-band);border-color:var(--band-line)}
+.pillar-ink .eyebrow,.pillar-ink .lead{color:var(--on-band-2)}
+.pillar-accent{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.pillar-accent .eyebrow,.pillar-accent .lead{color:var(--on-accent);opacity:.85}
+.pillar h3{font-size:clamp(30px,4vw,54px);margin-bottom:16px}
+.pillar .lead{margin-bottom:26px}
+.pillar-ink .btn{border-color:var(--on-band);color:var(--on-band)}
+.pillar-ink .btn-primary{background:var(--on-band);color:var(--band)}
+.pillar-accent .btn{border-color:var(--on-accent);color:var(--on-accent)}
+.pillar-accent .btn-primary{background:var(--on-accent);color:var(--accent)}
+.pillar-visual{min-width:0;display:grid;place-items:center}
+@media (max-width:820px){.pillar{grid-template-columns:1fr;min-height:0}.pillar-visual{order:-1}}
+.fan{position:relative;width:min(100%,340px);aspect-ratio:1}
+.fan .cov-wrap{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:3/4;border-radius:4px;overflow:hidden;box-shadow:var(--shadow);transform:translate(-50%,-50%) rotate(var(--r)) translateX(var(--x));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.fan:hover .cov-wrap{transform:translate(-50%,-50%) rotate(calc(var(--r)*1.6)) translateX(calc(var(--x)*1.5))}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:min(100%,330px)}
+.day{aspect-ratio:1;border-radius:50%;border:1px solid var(--band-line);display:grid;place-items:center;font-size:12px;font-family:var(--font-display);transition:background .35s,color .35s,transform .35s}
+.day.on{background:var(--on-band);color:var(--band)}
+.room{position:relative;width:min(100%,340px);aspect-ratio:1;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,var(--wall-1),var(--wall-2))}
+.room::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:var(--floor)}
+.room .frame{position:absolute;left:14%;top:14%;width:34%;aspect-ratio:3/4;background:#FBFAF7;padding:6%;box-shadow:0 0 0 4px #17171C,0 20px 30px -16px rgba(0,0,0,.5);z-index:1}
+.room .frame div{width:100%;height:100%;background-size:cover;background-position:center}
+.room .cush{position:absolute;right:12%;bottom:16%;width:30%;aspect-ratio:1;border-radius:14%;background-size:cover;background-position:center;box-shadow:inset 0 0 20px rgba(0,0,0,.25),0 12px 20px -10px rgba(0,0,0,.5);transform:rotate(-6deg);z-index:2}
+
+/* ---------- shop ---------- */
+.shop-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);font-size:13px;font-weight:600;transition:background .2s,color .2s,border-color .2s}
+.chip:hover,.chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line-strong);border-radius:999px;padding:7px 14px;flex:0 1 260px;min-width:0}
+.search svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none}
+.search input{border:0;background:none;outline:none;width:100%;min-width:0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:clamp(18px,2.4vw,34px) clamp(12px,2vw,24px)}
+.card{display:grid;gap:12px;min-width:0;align-content:start}
+.cover{aspect-ratio:3/4;border-radius:4px;overflow:hidden;position:relative;box-shadow:0 1px 0 var(--line);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;cursor:pointer;text-align:left;width:100%;display:block}
+.card:hover .cover{transform:translateY(-6px) rotate(-.6deg);box-shadow:var(--shadow)}
+.card-meta{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.card-title{font-family:var(--font-display);font-size:18px;line-height:1.15;font-weight:500;margin:0}
+.card-cat{font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;font-weight:600}
+.price{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.card .add{justify-self:start}
+.empty{padding:40px 0;color:var(--ink-2)}
+/* generated covers */
+.cov{position:absolute;inset:0;padding:11% 10%;display:flex;flex-direction:column;justify-content:flex-start;gap:9%;background:var(--c-bg);color:var(--c-fg);overflow:hidden;font-size:17px}
+.cov>span{position:relative;display:block}
+.cov-brand{font-size:8px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;opacity:.75}
+.cov-title{font-family:var(--font-display);font-size:clamp(15px,1.5vw,23px);line-height:1.05;font-weight:600;text-wrap:balance;display:block}
+.cov-sub{font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-top:6px;display:block}
+.cov-guides::before{content:"";position:absolute;right:-22%;bottom:-24%;width:64%;aspect-ratio:1;border-radius:50%;background:var(--c-ac);opacity:.9}
+.cov-templates{background-image:linear-gradient(var(--c-line) 1px,transparent 1px),linear-gradient(90deg,var(--c-line) 1px,transparent 1px);background-size:14% 14%;background-position:center}
+.cov-faith::before{content:"30";position:absolute;right:-6%;bottom:-16%;font-family:var(--font-display);font-weight:700;font-size:6.4em;line-height:1;color:var(--c-ac);letter-spacing:-.04em}
+.cov-posters{background-size:cover;background-position:center;padding:0}
+.cov-posters>span{display:none}
+.cov-bundle::before{content:"";position:absolute;inset:auto -10% -30% -10%;height:60%;border-radius:0;background:repeating-linear-gradient(-45deg,var(--c-ac) 0 6px,transparent 6px 16px);opacity:.55;width:auto;aspect-ratio:auto}
+
+/* ---------- quick view ---------- */
+dialog{border:0;padding:0;background:var(--paper);color:var(--ink);border-radius:14px;width:min(960px,calc(100vw - 32px));max-height:min(92vh,900px);box-shadow:var(--shadow);overflow:auto}
+dialog::backdrop{background:rgba(10,10,14,.55);backdrop-filter:blur(4px)}
+.qv{display:grid;grid-template-columns:1fr 1.15fr}
+.qv-cover{position:relative;aspect-ratio:3/4;align-self:stretch}
+.qv-cover .cov-title{font-size:clamp(20px,2.6vw,30px)}
+.qv-cover .cov-brand{font-size:10px}
+.qv-body{padding:clamp(22px,3.5vw,44px);display:grid;gap:16px;align-content:start;min-width:0}
+.qv-body h3{font-size:clamp(26px,3vw,38px)}
+.qv-price{font-size:22px;font-weight:700}
+.qv ul{margin:0;padding-left:18px;color:var(--ink-2);display:grid;gap:4px;font-size:15px}
+.qv-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.qv-link{font-size:14px;color:var(--ink-2)}
+.close{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:var(--shadow-sm);z-index:2}
+.close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+@media (max-width:720px){.qv{grid-template-columns:1fr}.qv-cover{aspect-ratio:4/3}}
+
+/* ---------- bag ---------- */
+.scrim{position:fixed;inset:0;background:rgba(10,10,14,.45);z-index:64;opacity:0;pointer-events:none;transition:opacity .4s}
+.scrim.show{opacity:1;pointer-events:auto}
+.bag{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);color:var(--ink);z-index:66;transform:translateX(102%);transition:transform .5s cubic-bezier(.76,0,.24,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);box-shadow:var(--shadow)}
+.bag.open{transform:none}
+.bag-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.bag-head h3{font-size:24px}
+.bag-items{flex:1;overflow:auto;padding:14px 20px;display:grid;gap:16px;align-content:start}
+.bag-item{display:grid;grid-template-columns:54px 1fr auto;gap:12px;align-items:center}
+.bag-thumb{aspect-ratio:3/4;border-radius:3px;overflow:hidden;position:relative}
+.bag-name{font-family:var(--font-display);font-size:16px;line-height:1.15}
+.bag-sub{font-size:12px;color:var(--ink-3);margin-top:3px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-strong);border-radius:999px;margin-top:8px}
+.qty button{width:28px;height:28px;font-size:16px;line-height:1}
+.qty span{min-width:22px;text-align:center;font-size:13px;font-weight:600}
+.bag-right{display:grid;gap:8px;justify-items:end;text-align:right}
+.rm{font-size:12px;color:var(--ink-3);text-decoration:underline}
+.bag-foot{padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:grid;gap:10px}
+.bag-row{display:flex;justify-content:space-between;font-size:15px}
+.bag-row.total{font-weight:700;font-size:18px}
+.bag-note{font-size:12px;color:var(--ink-3)}
+.bag-empty{color:var(--ink-2);padding:30px 0;text-align:center}
+.give{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.give i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;flex:none}
+
+/* ---------- poster studio ---------- */
+.studio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(24px,4vw,64px);align-items:start}
+.ctrl{display:grid;gap:12px;padding-block:20px;border-top:1px solid var(--line)}
+.ctrl:first-child{border-top:0;padding-top:0}
+.ctrl-label{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ink-2)}
+.ctrl-label em{font-style:normal;color:var(--ink-3);letter-spacing:0;text-transform:none;font-weight:500;font-size:13px}
+.designs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.design{aspect-ratio:3/4;border-radius:5px;overflow:hidden;border:2px solid transparent;transition:border-color .2s,transform .2s;background:var(--paper-2)}
+.design:hover{transform:translateY(-2px)}
+.design.active{border-color:var(--accent)}
+.design canvas{width:100%;height:100%}
+.palettes{display:flex;gap:10px;flex-wrap:wrap}
+.pal{width:38px;height:38px;border-radius:50%;border:2px solid transparent;padding:2px;transition:transform .2s,border-color .2s}
+.pal i{display:block;width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,var(--a) 0 50%,var(--b) 50% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.pal.active{border-color:var(--accent)}
+.pal:hover{transform:scale(1.08)}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line-strong);border-radius:999px;padding:3px;gap:2px;max-width:100%}
+.seg button{padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;transition:background .2s,color .2s}
+.seg button.active{background:var(--ink);color:var(--paper)}
+.field{display:flex;gap:8px}
+.field input{flex:1;min-width:0;border:1px solid var(--line-strong);border-radius:10px;padding:11px 14px;background:transparent;outline:none}
+.field input:focus{border-color:var(--accent)}
+.studio-preview{display:grid;gap:16px;justify-items:center}
+.scene{position:relative;width:min(100%,540px);aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--paper-2);isolation:isolate}
+.wall{position:absolute;inset:0;background:linear-gradient(180deg,var(--wall-1),var(--wall-2));transition:opacity .4s}
+.floor{position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(180deg,var(--floor),var(--floor-2));transition:opacity .4s}
+.floor::before{content:"";position:absolute;left:0;right:0;top:0;height:3%;background:rgba(255,255,255,.55)}
+.art{position:absolute;left:50%;top:46%;width:52%;aspect-ratio:3/4;transform:translate(-50%,-50%);background:var(--art) center/cover;transition:width .5s cubic-bezier(.2,.7,.2,1),top .5s,box-shadow .5s,opacity .4s}
+.art::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.14),transparent 40%,rgba(0,0,0,.06));pointer-events:none}
+.sofa{position:absolute;left:8%;right:8%;bottom:10%;height:40%;opacity:0;transition:opacity .4s;pointer-events:none}
+.sofa-back{position:absolute;left:0;right:0;top:0;height:58%;background:#5F6B7A;border-radius:18px 18px 4px 4px}
+.sofa-seat{position:absolute;left:-3%;right:-3%;bottom:0;height:46%;background:#6E7A89;border-radius:12px;box-shadow:0 14px 24px -14px rgba(0,0,0,.6)}
+.sofa-arm{position:absolute;top:30%;width:9%;height:60%;background:#55606E;border-radius:10px}
+.sofa-arm.l{left:-6%}.sofa-arm.r{right:-6%}
+.cushion{position:absolute;left:50%;bottom:27%;width:40%;aspect-ratio:1;border-radius:12%;background:var(--art) center/cover;transform:translateX(-50%) rotate(-5deg) scale(.9);box-shadow:inset 0 0 0 6px rgba(255,255,255,.18),inset 0 0 40px rgba(0,0,0,.28),0 16px 24px -12px rgba(0,0,0,.55);opacity:0;transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.cushion::after{content:"";position:absolute;inset:0;border-radius:inherit;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 4px),repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 4px)}
+.cushion::before{content:"";position:absolute;inset:6%;border-radius:inherit;border:1px dashed rgba(255,255,255,.3)}
+.scene.v-poster .wall,.scene.v-poster .floor{opacity:0}
+.scene.v-poster .art{width:66%;top:50%;box-shadow:var(--shadow)}
+.scene.v-framed .art{width:50%;top:44%;box-shadow:0 0 0 10px #FBFAF7,0 0 0 13px #17171C,0 30px 40px -20px rgba(0,0,0,.6)}
+.scene.v-canvas .art{width:56%;top:44%;box-shadow:-10px 10px 0 -2px rgba(0,0,0,.28),0 30px 40px -20px rgba(0,0,0,.55)}
+.scene.v-cushion .art{opacity:0}
+.scene.v-cushion .sofa,.scene.v-cushion .cushion{opacity:1}
+.scene.v-cushion .cushion{transform:translateX(-50%) rotate(-5deg) scale(1)}
+.studio-buy{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;width:min(100%,540px);border-top:1px solid var(--line);padding-top:16px}
+.studio-buy .price{font-size:20px}
+.studio-buy small{display:block;color:var(--ink-3);font-size:12px;font-weight:500}
+@media (max-width:900px){.studio{grid-template-columns:1fr}.studio-preview{order:-1}}
+
+/* ---------- faith band ---------- */
+.band{background:var(--band);color:var(--on-band)}
+.band .eyebrow,.band .lead{color:var(--on-band-2)}
+.band .btn{border-color:var(--on-band);color:var(--on-band)}
+.band .btn-primary{background:var(--on-band);color:var(--band)}
+.faith{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.faith h2{margin-bottom:18px}
+.faith .lead{margin-bottom:28px}
+.days-big{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(6px,1.2vw,14px);width:min(100%,520px);margin-inline:auto}
+.dayb{aspect-ratio:1;border-radius:50%;border:1px solid var(--band-line);display:grid;place-items:center;font-family:var(--font-display);font-size:clamp(14px,1.6vw,22px);transition:background .3s,color .3s,transform .3s;color:var(--on-band)}
+.dayb.on{background:var(--on-band);color:var(--band)}
+.dayb.today{box-shadow:0 0 0 3px var(--accent)}
+.dayb:hover{transform:scale(1.08)}
+.today-card{margin:18px auto 0;display:flex;align-items:center;gap:16px;border:1px solid var(--band-line);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--on-band-2);width:min(100%,520px)}
+.today-card b{color:var(--on-band);font-family:var(--font-display);font-size:30px;font-weight:500;line-height:1;flex:none;min-width:1.4em;text-align:center}
+.vols{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.vol{border:1px solid var(--band-line);border-radius:10px;padding:14px;display:grid;gap:10px;font-size:13px;align-content:space-between;min-height:118px}
+.vol b{font-family:var(--font-display);font-size:20px;font-weight:500;display:block}
+.vol .price{font-size:13px;color:var(--on-band-2)}
+.vol button{font-size:12px;font-weight:700;text-decoration:underline;justify-self:start;color:var(--on-band)}
+@media (max-width:820px){.faith{grid-template-columns:1fr}.vols{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- the book ---------- */
+.book-sec{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.book-stage{perspective:1400px;display:grid;place-items:center;min-height:360px;padding:30px 0}
+.book{position:relative;width:min(230px,60vw);aspect-ratio:2/3;transform-style:preserve-3d;transform:rotateY(-24deg) rotateX(5deg);cursor:pointer}
+.book-pages{position:absolute;inset:3px 6px 3px 0;background:#F8F5EE;border-radius:2px 8px 8px 2px;transform:translateZ(-6px);box-shadow:inset -4px 0 10px rgba(0,0,0,.12)}
+.book-pages::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 2px,rgba(0,0,0,.05) 2px 3px);border-radius:inherit}
+.book-inside{position:absolute;inset:3px 6px 3px 0;padding:24px 20px;color:#2A2A30;font-family:var(--font-display);font-size:13px;line-height:1.6;font-style:italic;overflow:hidden;transform:translateZ(-5px)}
+.book-inside p{margin:0 0 .5em}
+.book-inside .rule{height:1px;background:rgba(42,42,48,.18);margin:14px 0}
+.book-cover{position:absolute;inset:0;background:var(--band);color:var(--on-band);border-radius:3px 10px 10px 3px;transform-origin:left center;transform:rotateY(0deg);transition:transform 1.3s cubic-bezier(.76,0,.24,1);display:flex;flex-direction:column;justify-content:space-between;padding:22px 18px;backface-visibility:hidden;box-shadow:var(--shadow)}
+.book.is-open .book-cover{transform:rotateY(-152deg)}
+.book-cover .t{font-family:var(--font-display);font-size:26px;line-height:1.08;font-style:italic}
+.book-cover .s{font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;opacity:.8}
+.book-spine{position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--band);transform:rotateY(90deg) translateZ(-5px);transform-origin:left;filter:brightness(.8)}
+.progress-bar{height:6px;background:var(--paper-3);border-radius:3px;overflow:hidden;margin-top:26px}
+.progress-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.progress-row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-2);margin-top:8px}
+.form-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.form-row input{flex:1 1 200px;min-width:0;border:1px solid var(--line-strong);border-radius:999px;padding:13px 18px;background:transparent;outline:none}
+.form-row input:focus{border-color:var(--accent)}
+.form-msg{font-size:14px;color:var(--ink-2);margin-top:10px;min-height:1.4em}
+.form-msg.ok{color:var(--accent)}
+@media (max-width:820px){.book-sec{grid-template-columns:1fr}}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,80px);align-items:center}
+.about h2{margin-bottom:20px}
+.about .lead{margin-bottom:16px}
+.about-text p{color:var(--ink-2);max-width:60ch;margin-bottom:14px}
+.about-text p.sig{color:var(--ink)}
+.sig{font-family:var(--font-display);font-style:italic;font-size:26px;margin-top:20px}
+.stamp{width:min(220px,50vw);aspect-ratio:1;position:relative;display:grid;place-items:center;margin:0 auto 30px}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite;overflow:visible}
+.stamp svg text{font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.22em;fill:var(--ink)}
+.stamp .ctr{font-family:var(--font-display);font-size:64px;font-weight:600;line-height:1;color:var(--accent);font-style:italic}
+@keyframes spin{to{transform:rotate(360deg)}}
+.facts{border-top:1px solid var(--line);margin:0;padding:0;list-style:none}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts li span{color:var(--ink-2)}
+.facts li b{font-weight:600;text-align:right}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+
+/* ---------- feedback ---------- */
+.fb{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.stars{display:flex;gap:4px;flex-direction:row-reverse;justify-content:flex-end;position:relative}
+.stars input{position:absolute;opacity:0;width:0;height:0}
+.stars label{font-size:32px;cursor:pointer;color:var(--paper-3);transition:color .15s,transform .15s;line-height:1}
+.stars label:hover,.stars label:hover~label,.stars input:checked~label{color:var(--accent)}
+.stars label:hover{transform:scale(1.15)}
+.stars input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+textarea.ta{width:100%;min-height:120px;border:1px solid var(--line-strong);border-radius:12px;padding:14px;background:transparent;resize:vertical;outline:none;margin-top:12px;display:block}
+textarea.ta:focus{border-color:var(--accent)}
+@media (max-width:820px){.fb{grid-template-columns:1fr}}
+
+/* ---------- faq ---------- */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-family:var(--font-display);font-size:clamp(19px,2vw,24px)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:28px;height:28px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;flex:none;transition:transform .35s,background .2s,color .2s;font-style:normal;font-size:18px;line-height:1;font-family:var(--font-body)}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--ink);color:var(--paper)}
+.faq .ans{padding:0 0 22px;color:var(--ink-2);max-width:62ch}
+
+/* ---------- newsletter ---------- */
+.news{background:var(--accent);color:var(--on-accent)}
+.news .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;padding-block:clamp(56px,8vw,110px)}
+.news .eyebrow{color:var(--on-accent);opacity:.8}
+.news h2{color:var(--on-accent)}
+.news p.lead{color:var(--on-accent);opacity:.85;max-width:48ch;margin-top:14px}
+.news .form-row{margin-top:0}
+.news .form-row input{border-color:color-mix(in srgb,var(--on-accent) 55%,transparent);color:var(--on-accent)}
+.news .form-row input::placeholder{color:color-mix(in srgb,var(--on-accent) 70%,transparent)}
+.news .btn-primary{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent)}
+.news .form-msg{color:var(--on-accent);opacity:.9;flex-basis:100%}
+@media (max-width:820px){.news .wrap{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding-block:clamp(48px,6vw,90px) 32px}
+.foot-mark{font-family:var(--font-display);font-weight:700;font-size:clamp(40px,9.4vw,150px);line-height:.95;letter-spacing:-.01em;margin-bottom:clamp(30px,5vw,60px);overflow:hidden;white-space:nowrap}
+.foot-mark span{display:inline-block}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.foot-grid h4{font-family:var(--font-body);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px;color:var(--ink-2);font-weight:700}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
+.foot-grid a{text-decoration:none}
+.foot-grid a:hover{text-decoration:underline}
+.email{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.email code{font-family:inherit;user-select:all;font-size:15px;word-break:break-all}
+.copy{font-size:12px;border:1px solid var(--line-strong);border-radius:999px;padding:4px 10px;font-weight:600}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(30px,5vw,60px);padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
+@media (max-width:820px){.foot-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- ask widget ---------- */
+.ask{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:grid;justify-items:end;gap:10px}
+.ask-btn{height:52px;padding:0 20px 0 16px;border-radius:999px;background:var(--ink);color:var(--paper);display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:14px;box-shadow:var(--shadow);transition:transform .25s}
+.ask-btn:hover{transform:translateY(-2px)}
+.ask-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linejoin:round}
+.ask-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;width:min(300px,calc(100vw - 36px));box-shadow:var(--shadow);display:grid;gap:10px;font-size:14px;transform:translateY(10px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.ask-card.open{opacity:1;transform:none;pointer-events:auto}
+.ask-card b{font-family:var(--font-display);font-size:20px;font-weight:500}
+.ask-card a{color:var(--accent);font-weight:600;text-decoration:none}
+.ask-card p{color:var(--ink-2)}
+</style>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand">TumTum House.</a>
+  <ul class="nav-links">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#posters">Poster studio</a></li>
+    <li><a href="#faith">30 Days with God</a></li>
+    <li><a href="#book">The book</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Search the shop"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="bagBtn" aria-label="Open your bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count" id="bagCount">0</span></button>
+    <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" id="burgerIcon"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<nav class="menu" id="menu" aria-label="Menu">
+  <a href="#shop">Shop</a>
+  <a href="#posters">Poster studio</a>
+  <a href="#faith">30 Days with God</a>
+  <a href="#book">The book</a>
+  <a href="#about">About</a>
+  <small>TumTum.House26@gmail.com · Overijssel, the Netherlands</small>
+</nav>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="floats" aria-hidden="true">
+    <div class="fl fl-1" data-depth="22"><div class="fl-in" id="fl1"></div></div>
+    <div class="fl fl-2" data-depth="-30"><div class="fl-in" id="fl2"></div></div>
+    <div class="fl fl-3" data-depth="14"><div class="fl-in" id="fl3"></div></div>
+  </div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow" id="heroEyebrow">Digital guides · 30 Days with God · Posters for your home</p>
+    <div class="mark" role="img" aria-label="TumTum House">
+      <div class="mark-line mark-top" aria-hidden="true"><span>TUM</span></div>
+      <div class="mark-gap" id="markGap" aria-hidden="true">TumTum House.</div>
+      <div class="mark-line mark-bot" aria-hidden="true"><span>TUM</span></div>
+    </div>
+    <h1 class="hero-title"><span class="w"><span>Learn.</span></span><span class="w"><span>Build.</span></span><span class="w"><span>Grow.</span></span></h1>
+    <p class="lead hero-sub" id="heroSub">Small, useful digital products that help you <span class="rot" id="rot"><span class="on">move forward.</span><span>get organised.</span><span>start online.</span><span>stay close to God.</span><span>dress your walls.</span></span></p>
+    <div class="hero-cta" id="heroCta">
+      <a href="#shop" class="btn btn-primary">Shop the collection</a>
+      <a href="#posters" class="btn">Design a poster</a>
+    </div>
+    <button class="feat" id="featBtn"><i>★</i><span>Featured: Complete Digital Business Starter Bundle · € 39,95</span></button>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-group">
+        <span class="ticker-item">Digital files you download and keep <i>✦</i></span>
+        <span class="ticker-item">Made in the Netherlands <i>✦</i></span>
+        <span class="ticker-item">Every order gives back <i>✦</i></span>
+        <span class="ticker-item">New products added regularly <i>✦</i></span>
+        <span class="ticker-item">Posters from € 1,00 <i>✦</i></span>
+        <span class="ticker-item">Digital products from € 1,00 <i>✦</i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PILLARS ================= -->
+<section class="wrap pillars" id="what" aria-label="What we make">
+  <article class="pillar">
+    <div>
+      <p class="eyebrow">Guides &amp; planners</p>
+      <h3>Practical guides for starting and staying organised.</h3>
+      <p class="lead">From a daily planner for € 1,00 to the complete Digital Business Starter Bundle. Read it on your phone, print what you need, start today.</p>
+      <a href="#shop" class="btn btn-primary" data-filter-link="guides">Browse the guides</a>
+    </div>
+    <div class="pillar-visual"><div class="fan" id="fan"></div></div>
+  </article>
+  <article class="pillar pillar-ink">
+    <div>
+      <p class="eyebrow">Faith</p>
+      <h3>Thirty days. One step a day.</h3>
+      <p class="lead">The 30 Days with God series: four volumes with a page to read every day, € 3,00 each. Each one comes with a poster.</p>
+      <a href="#faith" class="btn btn-primary">Start your 30 days</a>
+    </div>
+    <div class="pillar-visual"><div class="days" id="daysMini" aria-hidden="true"></div></div>
+  </article>
+  <article class="pillar pillar-accent">
+    <div>
+      <p class="eyebrow">Posters for your home</p>
+      <h3>One file. A poster, a cushion or a canvas.</h3>
+      <p class="lead">Every poster is a digital file for € 1,00 for your own use. Print it at home or at a print shop and use it as wall art, a cushion cover or a canvas.</p>
+      <a href="#posters" class="btn btn-primary">Open the poster studio</a>
+    </div>
+    <div class="pillar-visual"><div class="room" id="roomMini" aria-hidden="true"><div class="frame"><div id="roomFrame"></div></div><div class="cush" id="roomCush"></div></div></div>
+  </article>
+</section>
+
+<!-- ================= SHOP ================= -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div><p class="eyebrow">The shop</p><h2>Everything, in one place.</h2></div>
+      <p class="lead" id="shopCount">19 products · all digital</p>
+    </div>
+    <div class="shop-tools" data-reveal>
+      <div class="chips" id="chips" role="group" aria-label="Filter products">
+        <button class="chip active" data-cat="all">All</button>
+        <button class="chip" data-cat="guides">Guides</button>
+        <button class="chip" data-cat="templates">Planners</button>
+        <button class="chip" data-cat="faith">30 Days with God</button>
+        <button class="chip" data-cat="posters">Posters</button>
+      </div>
+      <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="search" type="search" placeholder="Search products" aria-label="Search products" autocomplete="off"></label>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing found. Try another word, or browse all products.</p>
+  </div>
+</section>
+
+<!-- ================= POSTER STUDIO ================= -->
+<section class="section" id="posters" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div><p class="eyebrow">Poster studio</p><h2>Make it yours. See it at home.</h2></div>
+      <p class="lead">Pick a design, choose your colours, add your own words, and see how it looks as a poster, a framed print, a cushion or a canvas. The shop sells three ready-made poster files; a poster from the studio is made on request.</p>
+    </div>
+    <div class="studio" data-reveal>
+      <div class="studio-controls">
+        <div class="ctrl"><div class="ctrl-label"><span>Design</span><em id="designName">Arches</em></div><div class="designs" id="designs" role="group" aria-label="Choose a design"></div></div>
+        <div class="ctrl"><div class="ctrl-label"><span>Colours</span><em id="palName">Ink &amp; paper</em></div><div class="palettes" id="palettes" role="group" aria-label="Choose colours"></div></div>
+        <div class="ctrl"><div class="ctrl-label"><label for="posterText">Your words</label><em>optional · shows on the Word design, as a caption on the others</em></div><div class="field"><input id="posterText" maxlength="28" placeholder="Blessed" autocomplete="off"></div></div>
+        <div class="ctrl"><div class="ctrl-label"><span>Preview as</span></div><div class="seg" id="views" role="group" aria-label="Preview as"><button class="active" data-view="poster">Poster</button><button data-view="framed">Framed</button><button data-view="cushion">Cushion</button><button data-view="canvas">Canvas</button></div></div>
+      </div>
+      <div class="studio-preview">
+        <div class="scene v-poster" id="scene" aria-label="Poster preview">
+          <div class="wall"></div><div class="floor"></div>
+          <div class="sofa"><div class="sofa-back"></div><div class="sofa-seat"></div><div class="sofa-arm l"></div><div class="sofa-arm r"></div></div>
+          <div class="art" id="art"></div>
+          <div class="cushion" id="cushion"></div>
+        </div>
+        <div class="studio-buy">
+          <div><span class="price">€ 1,00</span><small>Per poster file, for your own use · resale licence + € 5,00 in the webshop</small></div>
+          <div class="row"><button class="btn btn-accent" id="addPoster">Request this poster</button><a href="#shop" class="btn" data-filter-link="posters">See the ready-made posters</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAITH ================= -->
+<section class="section band" id="faith">
+  <div class="wrap faith">
+    <div data-reveal>
+      <p class="eyebrow">30 Days with God</p>
+      <h2>A little time with God, every day, for thirty days.</h2>
+      <p class="lead">Four volumes with a page to read every day, to slow down and spend time with God. € 3,00 per volume, each with a poster included. You can edit the text in Canva.</p>
+      <div class="vols" id="vols"></div>
+      <div class="row" style="margin-top:22px">
+        <button class="btn btn-primary" id="addAllVols">Add all four · € 12,00</button>
+        <a class="btn" href="https://tumtumhouse.com/God-c196047534" target="_blank" rel="noopener">View in the webshop ↗</a>
+      </div>
+    </div>
+    <div data-reveal>
+      <div class="days-big" id="daysBig" role="group" aria-label="Thirty days"></div>
+      <div class="today-card"><b id="todayNum">1</b><span id="todayText">Pick a day to see where you would be.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE BOOK ================= -->
+<section class="section" id="book">
+  <div class="wrap book-sec">
+    <div class="book-stage" data-reveal>
+      <div class="book" id="bookEl" role="img" aria-label="A closed book that opens as you scroll">
+        <div class="book-spine"></div>
+        <div class="book-pages"></div>
+        <div class="book-inside"><p>Chapter one</p><div class="rule"></div><div class="rule"></div><div class="rule"></div><div class="rule"></div><div class="rule"></div><div class="rule"></div><p style="margin-top:18px;opacity:.6">still being written…</p></div>
+        <div class="book-cover"><span class="s">TumTum House · coming</span><span class="t">A personal book. Coming soon.</span><span class="s">In progress</span></div>
+      </div>
+    </div>
+    <div data-reveal>
+      <p class="eyebrow">The book</p>
+      <h2>A personal book is on its way.</h2>
+      <p class="lead" style="margin-top:16px">The founder of TumTum House is writing a personal book right now. What it is about stays under wraps a little longer. Leave your email and you will be the first to read it.</p>
+      <div class="progress-bar" aria-hidden="true"><i id="bookBar"></i></div>
+      <div class="progress-row"><span id="bookStatus">Writing in progress</span><span id="bookPct">0%</span></div>
+      <form class="form-row" id="waitForm" novalidate>
+        <input type="email" id="waitEmail" required placeholder="Your email" aria-label="Email for the book waitlist" autocomplete="email">
+        <button class="btn btn-primary" type="submit">Join the waitlist</button>
+      </form>
+      <p class="form-msg" id="waitMsg"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about" style="padding-top:0">
+  <div class="wrap about">
+    <div class="about-text" data-reveal>
+      <p class="eyebrow">About TumTum House</p>
+      <h2>Learn. Build. Grow.</h2>
+      <p class="lead">TumTum House started with a simple idea: a place where useful digital products, inspiration and resources come together.</p>
+      <p>From self-development and organisation to online business, creativity and lifestyle, we are building a collection of products designed to help you learn, create and move forward. We are still growing, and the shop keeps expanding with new digital products and resources.</p>
+      <p>TumTum House also supports charities. Every time you buy a product from our store, a part of it goes to charity.</p>
+      <p>Thank you for being part of the journey.</p>
+      <p class="sig">And have a blessed day.</p>
+    </div>
+    <div data-reveal>
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#circ">EVERY ORDER GIVES BACK ✦ MADE IN THE NETHERLANDS ✦ </textPath></text></svg>
+        <span class="ctr">TT</span>
+      </div>
+      <ul class="facts">
+        <li><span>Based in</span><b>Overijssel, the Netherlands</b></li>
+        <li><span>Digital products</span><b>Files you download and keep</b></li>
+        <li><span>Posters</span><b>€ 1,00 files, print anywhere</b></li>
+        <li><span>Giving back</span><b>A part of every order goes to charity</b></li>
+        <li><span>New products</span><b>Added regularly</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEEDBACK ================= -->
+<section class="section" id="feedback" style="padding-top:0">
+  <div class="wrap fb">
+    <div data-reveal>
+      <p class="eyebrow">Your experience matters</p>
+      <h2>We are growing. Tell us what you think.</h2>
+      <p class="lead" style="margin-top:16px">Bought something? Two sentences help us make the next product better.</p>
+    </div>
+    <form id="fbForm" data-reveal novalidate>
+      <div class="stars" id="stars" role="radiogroup" aria-label="Your rating">
+        <input type="radio" name="stars" id="s5" value="5"><label for="s5" title="5 stars">★</label>
+        <input type="radio" name="stars" id="s4" value="4"><label for="s4" title="4 stars">★</label>
+        <input type="radio" name="stars" id="s3" value="3"><label for="s3" title="3 stars">★</label>
+        <input type="radio" name="stars" id="s2" value="2"><label for="s2" title="2 stars">★</label>
+        <input type="radio" name="stars" id="s1" value="1"><label for="s1" title="1 star">★</label>
+      </div>
+      <textarea class="ta" id="fbText" placeholder="What did you buy, and how was it?" aria-label="Your feedback"></textarea>
+      <div class="form-row" style="margin-top:12px">
+        <input type="text" id="fbName" placeholder="Your name (optional)" aria-label="Your name" autocomplete="name">
+        <button class="btn btn-primary" type="submit">Send feedback</button>
+      </div>
+      <p class="form-msg" id="fbMsg"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="eyebrow">Good to know</p>
+      <h2 style="margin-bottom:28px">Questions, answered.</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details open><summary>How do I receive a digital product? <i>+</i></summary><div class="ans">Every product is a digital file. After you order in the webshop you download it, open it on your phone, tablet or computer, and print it or edit the text in Canva if you like.</div></details>
+      <details><summary>How do the posters work? <i>+</i></summary><div class="ans">A poster is a digital file for € 1,00 for your own use; the webshop also offers a resale licence for € 5,00 extra. Print it at home, at a copy shop or through a print service, as a poster, a framed print, a cushion cover or a canvas. The poster studio shows you how it will look.</div></details>
+      <details><summary>Where does my money go? <i>+</i></summary><div class="ans">To the product, and partly to charity. A part of every order is donated.</div></details>
+      <details><summary>Something wrong with my file? <i>+</i></summary><div class="ans">Email TumTum.House26@gmail.com and we will help. For returns and refunds, the conditions of the webshop apply.</div></details>
+      <details><summary>Where is TumTum House based? <i>+</i></summary><div class="ans">In Overijssel, the Netherlands. The products are digital, so you can order from anywhere.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="eyebrow">Stay in the loop</p>
+      <h2>New products are added regularly. Be the first to know.</h2>
+      <p class="lead">One short email when something new lands. No noise.</p>
+    </div>
+    <form class="form-row" id="newsForm" novalidate data-reveal>
+      <input type="email" id="newsEmail" required placeholder="Your email" aria-label="Email for updates" autocomplete="email">
+      <button class="btn btn-primary" type="submit">Keep me posted</button>
+      <p class="form-msg" id="newsMsg"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-mark" aria-hidden="true"><span id="footMark">TUMTUM HOUSE.</span></div>
+    <div class="foot-grid">
+      <div><h4>Shop</h4><ul>
+        <li><a href="#shop" data-filter-link="guides">Guides</a></li>
+        <li><a href="#shop" data-filter-link="templates">Templates</a></li>
+        <li><a href="#faith">30 Days with God</a></li>
+        <li><a href="#posters">Poster studio</a></li>
+        <li><a href="https://tumtumhouse.com" target="_blank" rel="noopener">Current webshop ↗</a></li>
+      </ul></div>
+      <div><h4>House</h4><ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#book">The book</a></li>
+        <li><a href="#faq">Questions</a></li>
+        <li><a href="#feedback">Leave feedback</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><span class="email"><code id="emailText">TumTum.House26@gmail.com</code><button class="copy" data-copy="TumTum.House26@gmail.com">Copy</button></span></li>
+        <li>Overijssel, the Netherlands</li>
+      </ul></div>
+      <div><h4>Follow</h4><ul>
+        <li><a href="https://instagram.com/tumtum_house" target="_blank" rel="noopener">Instagram ↗</a></li>
+        <li><a href="https://pinterest.com/tumtumhouse26" target="_blank" rel="noopener">Pinterest ↗</a></li>
+        <li><a href="https://facebook.com/1259377430582385" target="_blank" rel="noopener">Facebook ↗</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 TumTum House · Made in the Netherlands</span><span>Terms · Privacy · Shipping &amp; payment · Returns: see the webshop</span></div>
+  </div>
+</footer>
+
+<!-- ================= OVERLAYS ================= -->
+<div class="scrim" id="scrim"></div>
+<aside class="bag" id="bag" aria-label="Your bag" aria-hidden="true">
+  <div class="bag-head"><h3>Your bag</h3><button class="icon-btn" id="bagClose" aria-label="Close bag"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="bag-items" id="bagItems"></div>
+  <div class="bag-foot">
+    <div class="bag-row"><span>Subtotal</span><span class="price" id="bagTotal">€ 0,00</span></div>
+    <div class="give"><i></i>A part of every order goes to charity.</div>
+    <a class="btn btn-accent is-off" href="https://tumtumhouse.com" target="_blank" rel="noopener" id="bagCheckout">Finish your order at tumtumhouse.com ↗</a>
+    <p class="bag-note">This bag is a preview. Payment and download happen in the webshop. A custom poster from the studio is made on request.</p>
+  </div>
+</aside>
+
+<dialog id="qv" aria-label="Product details">
+  <button class="close" id="qvClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="qv"><div class="qv-cover" id="qvCover"></div><div class="qv-body" id="qvBody"></div></div>
+</dialog>
+
+<div class="ask" id="ask">
+  <div class="ask-card" id="askCard">
+    <b>Hi, how can we help?</b>
+    <p>Questions about a product or your order? Email us and we reply as soon as we can.</p>
+    <span class="email"><code>TumTum.House26@gmail.com</code><button class="copy" data-copy="TumTum.House26@gmail.com">Copy</button></span>
+    <a href="https://instagram.com/tumtum_house" target="_blank" rel="noopener">Or message us on Instagram ↗</a>
+  </div>
+  <button class="ask-btn" id="askBtn" aria-expanded="false" aria-controls="askCard"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></svg>Ask us</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(() => {
+'use strict';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(pointer: fine)').matches;
+const G = (window.gsap && !RM) ? window.gsap : null;
+const ST = (G && window.ScrollTrigger) ? window.ScrollTrigger : null;
+if (ST) G.registerPlugin(ST);
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+const fmt = n => '€ ' + n.toFixed(2).replace('.', ',');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const onEnter = (el, fn, margin = '0px 0px -12% 0px') => {
+  if (!el) return;
+  if (!('IntersectionObserver' in window)) { fn(); return; }
+  const io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { fn(); io.disconnect(); } }); }, { rootMargin: margin });
+  io.observe(el);
+};
+
+/* ---------- content: real products and prices from tumtumhouse.com (Oct 2026).
+   Short descriptions are drafts for the owner to edit. ---------- */
+const SHOP = 'https://tumtumhouse.com';
+const CAT_URL = { guides: SHOP + '/Online-books-c196047533', templates: SHOP + '/Online-books-c196047533', faith: SHOP + '/God-c196047534', posters: SHOP + '/Posters-c196047535' };
+const CAT_NAME = { guides: 'Online book', templates: 'Online book', faith: '30 Days with God', posters: 'Poster' };
+const BOOK = { progress: 0.4, status: 'Writing in progress' }; // placeholder: set the real progress here
+
+const PRODUCTS = [
+  { id: 'bundle', name: 'Complete Digital Business Starter Bundle', price: 39.95, cat: 'guides', tone: 2, bundle: true, sub: 'Workbook', blurb: 'Your step-by-step system for turning an idea into a simple, sellable digital business. Strategy, brand, product, content, sales, launch and systems, in one practical workbook for creators, beginners and small online business owners.' },
+  { id: 'ai-money', name: 'AI Money-Making Starter Kit', price: 24.95, cat: 'guides', tone: 3, sub: 'Starter kit', blurb: 'Practical ways to start earning online with AI tools: ideas, prompts and step-by-step plans you can start this week.' },
+  { id: 'ai-life', name: 'Ultimate AI Life & Productivity Pack', price: 14.95, cat: 'guides', tone: 4, sub: 'Pack', blurb: 'Prompts, routines and templates to plan your days, your work and your home with AI.' },
+  { id: 'dp-guide', name: 'Digital Products Online — Beginner Guide', price: 10, cat: 'guides', tone: 1, sub: 'Beginner guide', blurb: 'How to create, price and sell your first digital product, explained for complete beginners.' },
+  { id: 'dp-box', name: 'Digital products box', price: 10, cat: 'guides', tone: 5, sub: 'Digital product', blurb: 'A box of ready-to-use digital product ideas and files to get you started.' },
+  { id: 'together', name: 'Get it together', price: 10, cat: 'guides', tone: 6, sub: 'Guide', blurb: 'A guide to organising your life, your goals and your week, one small step at a time.' },
+  { id: 'reset', name: 'The No-Time, No-Money Reset', price: 9.95, cat: 'guides', tone: 3, sub: 'Reset plan', blurb: 'A reset plan for when you have little time and little budget, but want to move forward anyway.' },
+  { id: 'beautiful', name: 'How beautiful life can be', price: 3, cat: 'guides', tone: 5, sub: 'Short read', blurb: 'A short, uplifting read for the days you need a reminder.' },
+  { id: 'social', name: 'Social Media', price: 3, cat: 'templates', tone: 4, sub: 'Digital product', blurb: 'Content ideas and a posting rhythm for your social channels.' },
+  { id: 'social-plan', name: 'Social media plan', price: 1.5, cat: 'templates', tone: 1, sub: 'Planner', blurb: 'A simple weekly plan to fill in, so you always know what to post.' },
+  { id: 'project-doc', name: 'Project Documentation', price: 1.5, cat: 'templates', tone: 6, sub: 'Digital product', blurb: 'A clean way to document any project from start to finish.' },
+  { id: 'planner', name: 'Daily / weekly Planner', price: 1, cat: 'templates', tone: 5, sub: 'Planner', blurb: 'A printable planner for your days and weeks.' },
+  { id: 'god1', name: '30 Days with God', price: 3, cat: 'faith', tone: 3, vol: 1, sub: 'Volume 1', url: SHOP + '/30-Days-with-God-p800046068', blurb: 'An online document with a page to read every day, for thirty days, plus a poster. Volume 1.' },
+  { id: 'god2', name: '30 Days with God 2', price: 3, cat: 'faith', tone: 3, vol: 2, sub: 'Volume 2', url: SHOP + '/30-Days-with-God-2-p808077391', blurb: 'Thirty more days, a page a day, plus a poster. Volume 2 of the series.' },
+  { id: 'god3', name: '30 Days with God 3', price: 3, cat: 'faith', tone: 3, vol: 3, sub: 'Volume 3', url: SHOP + '/30-Days-with-God-3-p808073439', blurb: 'A page to read every day for thirty days, plus a poster. Volume 3 of the series.' },
+  { id: 'god4', name: '30 Days with God 4', price: 3, cat: 'faith', tone: 3, vol: 4, sub: 'Volume 4', url: SHOP + '/30-Days-with-God-4-p808060898', blurb: 'A page to read every day for thirty days, plus a poster. Volume 4 of the series.' },
+  { id: 'poster-paris', name: 'Posters Paris', price: 1, cat: 'posters', url: SHOP + '/Posters-Paris-p830604583', design: 'blocks', pal: 'ink', text: 'Paris', sub: 'Poster file', blurb: 'A poster file to print at home or at a print shop. Use it as wall art, a cushion cover or a canvas.' },
+  { id: 'poster-nature', name: 'Poster Nature', price: 1, cat: 'posters', url: SHOP + '/Poster-Nature-p830816112', design: 'sun', pal: 'sage', text: '', sub: 'Poster file', blurb: 'A calm nature poster file. Print it as a poster, a cushion cover or a canvas.' },
+  { id: 'poster', name: 'Poster', price: 1, cat: 'posters', url: SHOP + '/Poster-p831050239', design: 'arches', pal: 'clay', text: '', sub: 'Poster file', blurb: 'A simple graphic poster file for any room.' },
+];
+const BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+const TONES = {
+  1: { bg: '#E7E1D5', fg: '#1A1A1F', ac: '#1E3BFF', line: 'rgba(26,26,31,.12)' },
+  2: { bg: '#1E3BFF', fg: '#F5F3EE', ac: '#F5F3EE', line: 'rgba(245,243,238,.2)' },
+  3: { bg: '#15151A', fg: '#F5F3EE', ac: '#3A4FFF', line: 'rgba(245,243,238,.14)' },
+  4: { bg: '#D8DEEA', fg: '#15202B', ac: '#1E3BFF', line: 'rgba(21,32,43,.12)' },
+  5: { bg: '#EADFCF', fg: '#2F3A2E', ac: '#2F4C3A', line: 'rgba(47,58,46,.12)' },
+  6: { bg: '#F5F3EE', fg: '#15151A', ac: '#1E3BFF', line: 'rgba(21,21,26,.12)' },
+};
+const PALETTES = [
+  { id: 'ink', name: 'Ink & paper', bg: '#F5F3EE', fg: '#15151A', ac: '#1E3BFF' },
+  { id: 'sage', name: 'Sage', bg: '#E4E9DE', fg: '#2B3A2B', ac: '#8FA383' },
+  { id: 'clay', name: 'Clay', bg: '#F1E3D6', fg: '#6E3627', ac: '#D99B82' },
+  { id: 'night', name: 'Midnight', bg: '#15161F', fg: '#F2F0EA', ac: '#FFD84D' },
+  { id: 'blush', name: 'Blush', bg: '#F5E1E4', fg: '#3A2730', ac: '#D4899E' },
+  { id: 'cobalt', name: 'Cobalt', bg: '#1E3BFF', fg: '#F5F3EE', ac: '#FFD84D' },
+];
+const PAL = Object.fromEntries(PALETTES.map(p => [p.id, p]));
+const DESIGNS = [
+  { id: 'arches', name: 'Arches' }, { id: 'sun', name: 'Sunrise' }, { id: 'waves', name: 'Waves' },
+  { id: 'word', name: 'Word' }, { id: 'dots', name: 'Halftone' }, { id: 'blocks', name: 'Blocks' },
+];
+const DES = Object.fromEntries(DESIGNS.map(d => [d.id, d]));
+
+/* ---------- poster renderer (canvas) ---------- */
+function drawPoster(canvas, o, W, H) {
+  canvas.width = W; canvas.height = H;
+  const c = canvas.getContext('2d');
+  const pal = o.pal; const text = (o.text || '').trim();
+  const u = W / 100;
+  c.fillStyle = pal.bg; c.fillRect(0, 0, W, H);
+  c.lineCap = 'round'; c.lineJoin = 'round';
+  switch (o.design) {
+    case 'arches': {
+      const cols = [pal.fg, pal.ac, pal.bg, pal.fg]; const base = H * .86;
+      for (let i = 0; i < 4; i++) {
+        const w = W * (.72 - i * .15), r = w / 2, x = W / 2, top = H * .17 + i * H * .13;
+        c.fillStyle = cols[i];
+        c.beginPath(); c.moveTo(x - r, base); c.lineTo(x - r, top + r); c.arc(x, top + r, r, Math.PI, 0); c.lineTo(x + r, base); c.closePath(); c.fill();
+      }
+      break;
+    }
+    case 'sun': {
+      const hy = H * .64, cx = W / 2;
+      for (let i = 6; i >= 0; i--) {
+        const r = W * .07 + i * W * .068;
+        c.fillStyle = i % 2 === 0 ? pal.ac : pal.bg;
+        c.beginPath(); c.arc(cx, hy, r, Math.PI, 0); c.closePath(); c.fill();
+        c.strokeStyle = pal.fg; c.lineWidth = u * .5; c.stroke();
+      }
+      c.fillStyle = pal.fg; c.fillRect(0, hy, W, u * .7);
+      c.strokeStyle = pal.fg; c.lineWidth = u * .35;
+      for (let i = 1; i <= 4; i++) { const y = hy + i * H * .042, inset = W * .08 * i; c.beginPath(); c.moveTo(inset, y); c.lineTo(W - inset, y); c.stroke(); }
+      break;
+    }
+    case 'waves': {
+      const n = 16; c.lineWidth = u * .55;
+      for (let i = 0; i < n; i++) {
+        const y0 = H * .13 + i * (H * .68 / (n - 1));
+        c.strokeStyle = i < 3 ? pal.ac : pal.fg;
+        c.beginPath();
+        for (let x = W * .1; x <= W * .9 + 1; x += 4) {
+          const t = (x - W * .1) / (W * .8), amp = H * .03 * (1.2 + Math.sin(i * .5));
+          const y = y0 + Math.sin(t * Math.PI * 3 + i * .45) * amp;
+          if (x === W * .1) c.moveTo(x, y); else c.lineTo(x, y);
+        }
+        c.stroke();
+      }
+      break;
+    }
+    case 'dots': {
+      const cols = 12, rows = 16, gx = W * .8 / cols, gy = H * .76 / rows;
+      for (let r = 0; r < rows; r++) for (let q = 0; q < cols; q++) {
+        const x = W * .1 + gx * (q + .5), y = H * .09 + gy * (r + .5);
+        const t = (r / rows) * .7 + (q / cols) * .3, rad = gx * .46 * (.08 + t * .92);
+        c.fillStyle = (r + q) % 7 === 0 ? pal.ac : pal.fg;
+        c.beginPath(); c.arc(x, y, rad, 0, Math.PI * 2); c.fill();
+      }
+      break;
+    }
+    case 'blocks': {
+      const xs = [0, .34, .62, 1], ys = [0, .22, .58, .82, 1];
+      const fills = { '1-1': pal.ac, '0-2': pal.fg, '2-3': pal.ac };
+      const m = W * .08, bw = W - 2 * m, bh = H * .76, oy = H * .08;
+      c.lineWidth = u * 1.6; c.strokeStyle = pal.fg;
+      for (let i = 0; i < xs.length - 1; i++) for (let j = 0; j < ys.length - 1; j++) {
+        const x = m + xs[i] * bw, y = oy + ys[j] * bh, w = (xs[i + 1] - xs[i]) * bw, h = (ys[j + 1] - ys[j]) * bh;
+        c.fillStyle = fills[i + '-' + j] || pal.bg; c.fillRect(x, y, w, h); c.strokeRect(x, y, w, h);
+      }
+      break;
+    }
+    case 'word': {
+      c.strokeStyle = pal.fg; c.lineWidth = u * .4; c.strokeRect(W * .06, H * .06, W * .88, H * .88);
+      break;
+    }
+  }
+  const wordMode = o.design === 'word';
+  const label = wordMode ? (text || 'Blessed') : text;
+  if (label) {
+    if (wordMode) {
+      const lines = label.toUpperCase().split(/\s+/).filter(Boolean).slice(0, 3);
+      let fs = W * .42;
+      c.font = `800 ${fs}px "Bodoni Moda", Georgia, serif`;
+      const widest = Math.max(...lines.map(l => c.measureText(l).width));
+      fs = Math.min(fs, fs * (W * .8) / widest, (H * .6) / lines.length / .86);
+      c.font = `800 ${fs}px "Bodoni Moda", Georgia, serif`;
+      c.textAlign = 'center'; c.textBaseline = 'middle';
+      const lh = fs * .86, totalH = lh * lines.length, cy = H * .47, gap = fs * .05;
+      const draw = (clipTop, clipBot, dx) => {
+        c.save(); c.beginPath(); c.rect(0, clipTop, W, clipBot - clipTop); c.clip(); c.fillStyle = pal.fg;
+        lines.forEach((l, i) => c.fillText(l, W / 2 + dx, cy - totalH / 2 + lh * (i + .5)));
+        c.restore();
+      };
+      draw(0, cy - gap, -fs * .035);
+      draw(cy + gap, H, fs * .035);
+      c.fillStyle = pal.ac; c.fillRect(W * .32, cy - u * .3, W * .36, u * .6);
+    } else {
+      const fs = Math.min(W * .07, (W * .82) / Math.max(6, label.length) * 1.9);
+      c.font = `italic 500 ${fs}px "Bodoni Moda", Georgia, serif`;
+      c.textAlign = 'center'; c.textBaseline = 'alphabetic'; c.fillStyle = pal.fg;
+      c.fillText(label, W / 2, H * .91);
+    }
+  }
+  c.fillStyle = pal.fg; c.globalAlpha = .75;
+  c.font = `700 ${u * 2.4}px "Hanken Grotesk", Arial, sans-serif`; c.textAlign = 'center'; c.textBaseline = 'alphabetic';
+  try { c.letterSpacing = (u * .9) + 'px'; } catch (e) {}
+  c.fillText('TUMTUM HOUSE.', W / 2 + u * .45, H * .957);
+  c.globalAlpha = 1; try { c.letterSpacing = '0px'; } catch (e) {}
+  return canvas;
+}
+let thumbCache = {};
+function posterThumb(design, palId, text, w = 300, h = 400) {
+  const key = [design, palId, text || '', w].join('|');
+  if (!thumbCache[key]) {
+    const cv = document.createElement('canvas');
+    drawPoster(cv, { design, pal: PAL[palId], text: text || '' }, w, h);
+    thumbCache[key] = cv.toDataURL('image/jpeg', .88);
+  }
+  return thumbCache[key];
+}
+
+/* ---------- generated covers ---------- */
+function coverHTML(p) {
+  if (p.cat === 'posters') return `<div class="cov cov-posters" style="background-image:url('${posterThumb(p.design, p.pal, p.text)}')"></div>`;
+  const t = TONES[p.tone];
+  const cls = 'cov cov-' + p.cat + (p.bundle ? ' cov-bundle' : '');
+  return `<div class="${cls}" style="--c-bg:${t.bg};--c-fg:${t.fg};--c-ac:${t.ac};--c-line:${t.line}"><span class="cov-brand">TumTum House</span><span><span class="cov-title">${esc(p.name)}</span><span class="cov-sub">${esc(p.sub)}</span></span></div>`;
+}
+
+/* ---------- toast + fly-to-bag ---------- */
+let toastT;
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+function fly(fromEl) {
+  if (!G || !fromEl) return;
+  const src = fromEl.querySelector('.cov') || fromEl;
+  const r = src.getBoundingClientRect(); const b = $('#bagBtn').getBoundingClientRect();
+  if (!r.width) return;
+  const ghost = src.cloneNode(true); ghost.classList.add('fly');
+  const art = $('#scene').style.getPropertyValue('--art'); if (art) ghost.style.setProperty('--art', art);
+  ghost.style.cssText += `;position:fixed;left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;transform:none;opacity:1;margin:0`;
+  document.body.appendChild(ghost);
+  G.to(ghost, { left: b.left + b.width / 2 - 9, top: b.top + b.height / 2 - 12, width: 18, height: 24, opacity: .35, duration: .85, ease: 'power2.in',
+    onComplete: () => { ghost.remove(); G.fromTo('#bagBtn', { scale: 1 }, { scale: 1.3, duration: .16, yoyo: true, repeat: 1, ease: 'power1.inOut' }); } });
+}
+
+/* ---------- bag ---------- */
+let bag = store.get('tth-bag', []);
+const bagCount = () => bag.reduce((s, i) => s + i.qty, 0);
+const bagTotal = () => bag.reduce((s, i) => s + i.price * i.qty, 0);
+const itemOf = p => ({ id: p.id, name: p.name, price: p.price, sub: CAT_NAME[p.cat] });
+function saveBag() { store.set('tth-bag', bag); }
+function addToBag(item, fromEl, quiet) {
+  const ex = bag.find(i => i.id === item.id);
+  if (ex) ex.qty += 1; else bag.push(Object.assign({}, item, { qty: 1 }));
+  saveBag(); renderBag(); fly(fromEl); if (!quiet) toast('Added: ' + item.name);
+}
+function renderBag() {
+  const n = bagCount(); const cnt = $('#bagCount'); cnt.textContent = n; cnt.classList.toggle('show', n > 0);
+  const host = $('#bagItems');
+  if (!bag.length) host.innerHTML = '<p class="bag-empty">Your bag is empty.<br>Everything in the shop is a digital download.</p>';
+  else host.innerHTML = bag.map(i => {
+    const thumb = i.thumb ? `<div class="cov cov-posters" style="background-image:url('${i.thumb}')"></div>` : (BY_ID[i.id] ? coverHTML(BY_ID[i.id]) : '');
+    return `<div class="bag-item" data-id="${esc(i.id)}"><div class="bag-thumb">${thumb}</div><div><div class="bag-name">${esc(i.name)}</div><div class="bag-sub">${esc(i.sub || '')}</div><div class="qty"><button data-q="-1" aria-label="One less">−</button><span>${i.qty}</span><button data-q="1" aria-label="One more">+</button></div></div><div class="bag-right"><span class="price">${fmt(i.price * i.qty)}</span><button class="rm" data-rm>Remove</button></div></div>`;
+  }).join('');
+  $('#bagTotal').textContent = fmt(bagTotal());
+  $('#bagCheckout').classList.toggle('is-off', !bag.length);
+}
+$('#bagItems').addEventListener('click', e => {
+  const row = e.target.closest('.bag-item'); if (!row) return;
+  const id = row.dataset.id; const it = bag.find(i => i.id === id); if (!it) return;
+  if (e.target.closest('[data-q]')) { it.qty += Number(e.target.closest('[data-q]').dataset.q); if (it.qty <= 0) bag = bag.filter(i => i !== it); }
+  if (e.target.closest('[data-rm]')) bag = bag.filter(i => i !== it);
+  saveBag(); renderBag();
+});
+function openBag(open) {
+  $('#bag').classList.toggle('open', open); $('#bag').setAttribute('aria-hidden', String(!open));
+  $('#scrim').classList.toggle('show', open);
+  if (open) $('#bagClose').focus();
+}
+$('#bagBtn').addEventListener('click', () => openBag(true));
+$('#bagClose').addEventListener('click', () => openBag(false));
+$('#scrim').addEventListener('click', () => openBag(false));
+
+/* ---------- shop ---------- */
+let filter = 'all', query = '', firstRender = true;
+function renderProducts() {
+  const q = query.trim().toLowerCase();
+  const list = PRODUCTS.filter(p => (filter === 'all' || p.cat === filter) && (!q || (p.name + ' ' + p.blurb + ' ' + CAT_NAME[p.cat] + ' ' + p.sub).toLowerCase().includes(q)));
+  const grid = $('#grid');
+  grid.innerHTML = list.map(p => `<article class="card" data-id="${p.id}"><button class="cover" data-qv aria-label="View ${esc(p.name)}">${coverHTML(p)}</button><div class="card-meta"><div><h3 class="card-title">${esc(p.name)}</h3><div class="card-cat">${CAT_NAME[p.cat]}</div></div><span class="price">${fmt(p.price)}</span></div><button class="btn btn-sm add" data-add>Add to bag</button></article>`).join('');
+  $('#empty').hidden = list.length > 0;
+  $('#shopCount').textContent = (filter === 'all' && !q ? PRODUCTS.length + ' products' : list.length + ' of ' + PRODUCTS.length + ' products') + ' · all digital';
+  if (G) {
+    const opts = { y: 26, opacity: 0, duration: .7, stagger: .045, ease: 'power3.out', clearProps: 'transform,opacity' };
+    if (firstRender && ST) opts.scrollTrigger = { trigger: grid, start: 'top 88%', once: true };
+    G.from(grid.children, opts);
+  }
+  firstRender = false;
+  if (ST) ST.refresh();
+}
+$('#grid').addEventListener('click', e => {
+  const card = e.target.closest('.card'); if (!card) return;
+  const p = BY_ID[card.dataset.id];
+  if (e.target.closest('[data-add]')) addToBag(itemOf(p), card.querySelector('.cover'));
+  else if (e.target.closest('[data-qv]')) openQV(p);
+});
+$('#chips').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  setFilter(b.dataset.cat);
+});
+function setFilter(cat) {
+  filter = cat;
+  $$('.chip').forEach(c => c.classList.toggle('active', c.dataset.cat === cat));
+  renderProducts();
+}
+$('#search').addEventListener('input', e => { query = e.target.value; renderProducts(); });
+$$('[data-filter-link]').forEach(a => a.addEventListener('click', () => { setFilter(a.dataset.filterLink); $('#search').value = ''; query = ''; }));
+$('#searchBtn').addEventListener('click', () => { location.hash = '#shop'; setTimeout(() => $('#search').focus(), 500); });
+
+/* ---------- quick view ---------- */
+const qv = $('#qv');
+function openQV(p) {
+  $('#qvCover').innerHTML = coverHTML(p);
+  const bullets = p.cat === 'posters'
+    ? ['Digital file · € 1,00 for your own use (resale licence + € 5,00 in the webshop)', 'Print at home, at a copy shop or through a print service', 'Use it as a poster, a framed print, a cushion cover or a canvas']
+    : ['Digital file you download after ordering in the webshop', 'Open it on your phone, tablet or computer', 'Print it, or edit the text in Canva'];
+  $('#qvBody').innerHTML = `<p class="eyebrow" style="margin:0">${CAT_NAME[p.cat]}</p><h3>${esc(p.name)}</h3><div class="qv-price">${fmt(p.price)}</div><p class="lead" style="font-size:16px">${esc(p.blurb)}</p><ul>${bullets.map(b => '<li>' + b + '</li>').join('')}</ul><div class="qv-actions"><button class="btn btn-accent" id="qvAdd">Add to bag</button>${p.cat === 'posters' ? '<button class="btn" id="qvStudio">Preview it at home</button>' : ''}</div><p class="qv-link"><a href="${p.url || CAT_URL[p.cat]}" target="_blank" rel="noopener">View in the current webshop ↗</a></p>`;
+  qv.showModal();
+  $('#qvAdd').onclick = () => addToBag(itemOf(p), $('#qvCover'));
+  const s = $('#qvStudio'); if (s) s.onclick = () => { qv.close(); loadPosterIntoStudio(p); };
+}
+$('#qvClose').addEventListener('click', () => qv.close());
+qv.addEventListener('click', e => { if (e.target === qv) qv.close(); });
+$('#featBtn').addEventListener('click', () => openQV(BY_ID.bundle));
+
+/* ---------- poster studio ---------- */
+const studio = { design: 'arches', pal: 'ink', text: '', view: 'poster' };
+const big = document.createElement('canvas');
+function renderStudio() {
+  drawPoster(big, { design: studio.design, pal: PAL[studio.pal], text: studio.text }, 720, 960);
+  $('#scene').style.setProperty('--art', `url("${big.toDataURL('image/jpeg', .9)}")`);
+  $('#designName').textContent = DES[studio.design].name;
+  $('#palName').textContent = PAL[studio.pal].name;
+}
+function renderDesignThumbs() {
+  const host = $('#designs'); host.innerHTML = '';
+  DESIGNS.forEach(d => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'design' + (d.id === studio.design ? ' active' : ''); b.title = d.name; b.setAttribute('aria-label', d.name); b.setAttribute('aria-pressed', String(d.id === studio.design));
+    const cv = document.createElement('canvas'); drawPoster(cv, { design: d.id, pal: PAL[studio.pal], text: studio.text }, 120, 160); b.appendChild(cv);
+    b.addEventListener('click', () => { studio.design = d.id; $$('.design', host).forEach(x => { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', String(x === b)); }); renderStudio(); });
+    host.appendChild(b);
+  });
+}
+function renderPalettes() {
+  const host = $('#palettes'); host.innerHTML = '';
+  PALETTES.forEach(p => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'pal' + (p.id === studio.pal ? ' active' : ''); b.title = p.name; b.setAttribute('aria-label', p.name); b.setAttribute('aria-pressed', String(p.id === studio.pal));
+    b.innerHTML = `<i style="--a:${p.bg};--b:${p.ac}"></i>`;
+    b.addEventListener('click', () => { studio.pal = p.id; $$('.pal', host).forEach(x => { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', String(x === b)); }); renderDesignThumbs(); renderStudio(); });
+    host.appendChild(b);
+  });
+}
+let textT;
+$('#posterText').addEventListener('input', e => { studio.text = e.target.value; clearTimeout(textT); textT = setTimeout(() => { renderStudio(); renderDesignThumbs(); }, 120); });
+$('#views').addEventListener('click', e => {
+  const b = e.target.closest('[data-view]'); if (!b) return;
+  studio.view = b.dataset.view;
+  $$('#views button').forEach(x => x.classList.toggle('active', x === b));
+  const sc = $('#scene'); sc.className = 'scene v-' + studio.view;
+});
+function loadPosterIntoStudio(p) {
+  studio.design = p.design; studio.pal = p.pal; studio.text = p.text || ''; $('#posterText').value = studio.text;
+  renderPalettes(); renderDesignThumbs(); renderStudio();
+  document.getElementById('posters').scrollIntoView({ behavior: RM ? 'auto' : 'smooth' });
+}
+$('#addPoster').addEventListener('click', () => {
+  const slug = studio.text.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 20);
+  const id = ['poster', studio.design, studio.pal, slug].filter(Boolean).join('-');
+  const name = 'Custom poster · ' + DES[studio.design].name;
+  const sub = PAL[studio.pal].name + (studio.text.trim() ? ' · “' + studio.text.trim() + '”' : '') + ' · on request';
+  addToBag({ id, name, price: 1, sub, thumb: posterThumb(studio.design, studio.pal, studio.text, 90, 120) }, $('#art'));
+});
+
+/* ---------- pillars visuals ---------- */
+function renderFan() {
+  $('#fan').innerHTML = [['bundle', '-10deg', '-34%'], ['together', '0deg', '0%'], ['ai-life', '10deg', '34%']].map(([id, r, x]) => `<div class="cov-wrap" style="--r:${r};--x:${x}">${coverHTML(BY_ID[id])}</div>`).join('');
+}
+function renderFloats() {
+  const f1 = $('#fl1'), f2 = $('#fl2'), f3 = $('#fl3');
+  if (!f1) return;
+  f1.innerHTML = coverHTML(BY_ID.bundle); f2.innerHTML = coverHTML(BY_ID.god1); f3.innerHTML = coverHTML(BY_ID.poster);
+}
+function renderRoom() {
+  $('#roomFrame').style.backgroundImage = `url('${posterThumb('sun', 'sage', '')}')`;
+  $('#roomCush').style.backgroundImage = `url('${posterThumb('blocks', 'ink', 'Paris')}')`;
+}
+$('#daysMini').innerHTML = Array.from({ length: 30 }, (_, i) => `<span class="day">${i + 1}</span>`).join('');
+onEnter($('#daysMini'), () => $$('#daysMini .day').forEach((d, i) => setTimeout(() => d.classList.add('on'), RM ? 0 : i * 40)));
+
+/* ---------- faith: volumes + 30 days ---------- */
+$('#vols').innerHTML = [1, 2, 3, 4].map(v => `<div class="vol"><div><b>Vol. ${v}</b><span class="price">${fmt(3)}</span></div><button type="button" data-add-vol="${v}">Add to bag</button></div>`).join('');
+$('#vols').addEventListener('click', e => { const b = e.target.closest('[data-add-vol]'); if (!b) return; addToBag(itemOf(BY_ID['god' + b.dataset.addVol]), b.closest('.vol')); });
+$('#addAllVols').addEventListener('click', e => { [1, 2, 3, 4].forEach(v => addToBag(itemOf(BY_ID['god' + v]), null, true)); toast('Added all four volumes'); fly(e.currentTarget); openBag(true); });
+const today = Math.min(30, new Date().getDate());
+$('#daysBig').innerHTML = Array.from({ length: 30 }, (_, i) => `<button type="button" class="dayb${i + 1 === today ? ' today' : ''}" data-day="${i + 1}" aria-label="Day ${i + 1}">${i + 1}</button>`).join('');
+function setDay(d) {
+  $$('#daysBig .dayb').forEach(b => b.classList.toggle('on', Number(b.dataset.day) <= d));
+  $('#todayNum').textContent = d;
+  const t = d === today ? `If you had started on the 1st, today would be day ${d} of 30.` : d < 10 ? `Day ${d}: the first steps. Small, but you showed up.` : d < 20 ? `Day ${d}: halfway through the month. Keep going.` : d < 30 ? `Day ${d}: almost through. Finish the month.` : 'Day 30: a whole month with God. Time for the next volume.';
+  $('#todayText').textContent = t;
+}
+$('#daysBig').addEventListener('click', e => { const b = e.target.closest('.dayb'); if (b) setDay(Number(b.dataset.day)); });
+onEnter($('#daysBig'), () => {
+  const dots = $$('#daysBig .dayb');
+  dots.forEach((d, i) => setTimeout(() => { if (i + 1 <= today) d.classList.add('on'); }, RM ? 0 : i * 35));
+  setTimeout(() => setDay(today), RM ? 0 : today * 35 + 50);
+});
+
+/* ---------- book ---------- */
+const bookEl = $('#bookEl');
+onEnter(bookEl, () => { setTimeout(() => bookEl.classList.add('is-open'), RM ? 0 : 400); });
+bookEl.addEventListener('click', () => bookEl.classList.toggle('is-open'));
+onEnter($('#bookBar'), () => { $('#bookBar').style.width = Math.round(BOOK.progress * 100) + '%'; $('#bookPct').textContent = Math.round(BOOK.progress * 100) + '%'; $('#bookStatus').textContent = BOOK.status; });
+
+/* ---------- forms (stored locally; connect to a mailing tool later) ---------- */
+const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+function handleForm(formId, inputId, msgId, key, okMsg) {
+  const f = $(formId), inp = $(inputId), msg = $(msgId);
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = inp.value.trim();
+    if (!emailOk(v)) { msg.className = 'form-msg'; msg.textContent = 'Please enter a valid email address.'; inp.focus(); return; }
+    const list = store.get(key, []); if (!list.includes(v)) list.push(v); store.set(key, list);
+    msg.className = 'form-msg ok'; msg.textContent = okMsg; inp.value = '';
+  });
+}
+handleForm('#waitForm', '#waitEmail', '#waitMsg', 'tth-waitlist', 'You are on the list. You will hear from us when the book is ready.');
+handleForm('#newsForm', '#newsEmail', '#newsMsg', 'tth-news', 'Thank you. You will hear about new products first.');
+$('#fbForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const stars = ($('input[name="stars"]:checked') || {}).value, text = $('#fbText').value.trim(), msg = $('#fbMsg');
+  if (!stars || !text) { msg.className = 'form-msg'; msg.textContent = 'Pick a number of stars and write a line or two.'; return; }
+  const list = store.get('tth-feedback', []); list.push({ stars, text, name: $('#fbName').value.trim() }); store.set('tth-feedback', list);
+  msg.className = 'form-msg ok'; msg.textContent = 'Thank you. Your feedback helps us build the next product.';
+  $('#fbText').value = ''; $('#fbName').value = ''; $$('input[name="stars"]').forEach(i => i.checked = false);
+});
+
+/* ---------- copy buttons, ask widget ---------- */
+$$('[data-copy]').forEach(b => b.addEventListener('click', () => {
+  const v = b.dataset.copy;
+  const done = () => { const o = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = o, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(done).catch(() => fallback());
+  else fallback();
+  function fallback() { const code = b.parentElement.querySelector('code'); if (code) { const r = document.createRange(); r.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } toast('Select and copy the address'); }
+}));
+$('#askBtn').addEventListener('click', () => { const c = $('#askCard'); const o = !c.classList.contains('open'); c.classList.toggle('open', o); $('#askBtn').setAttribute('aria-expanded', String(o)); });
+
+/* ---------- nav, menu, progress ---------- */
+const nav = $('#nav'), menu = $('#menu'), burger = $('#burger');
+function setMenu(open) { menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', String(open)); $('#burgerIcon').innerHTML = open ? '<path d="M6 6l12 12M18 6L6 18"/>' : '<path d="M4 7h16M4 12h16M4 17h16"/>'; }
+burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+$$('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { setMenu(false); openBag(false); $('#askCard').classList.remove('open'); } });
+let ticking = false;
+function onScroll() {
+  if (ticking) return; ticking = true;
+  requestAnimationFrame(() => {
+    const y = window.scrollY || document.documentElement.scrollTop;
+    nav.classList.toggle('is-scrolled', y > 24);
+    const h = document.documentElement.scrollHeight - innerHeight;
+    $('#progress').style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')';
+    ticking = false;
+  });
+}
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+const track = $('#tickerTrack'); if (track) track.appendChild(track.firstElementChild.cloneNode(true));
+
+/* ---------- rotating word ---------- */
+(() => {
+  const words = $$('#rot span'); if (words.length < 2 || RM) return;
+  let i = 0;
+  setInterval(() => {
+    const cur = words[i]; i = (i + 1) % words.length; const nxt = words[i];
+    cur.classList.remove('on'); cur.classList.add('off');
+    setTimeout(() => cur.classList.remove('off'), 700);
+    nxt.classList.remove('off'); nxt.classList.add('on');
+  }, 2600);
+})();
+
+/* ---------- initial render ---------- */
+renderProducts(); renderFan(); renderFloats(); renderRoom(); renderPalettes(); renderDesignThumbs(); renderStudio(); renderBag();
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => { thumbCache = {}; renderProducts(); renderFan(); renderFloats(); renderRoom(); renderDesignThumbs(); renderStudio(); renderBag(); if (ST) ST.refresh(); });
+}
+
+/* ---------- motion (GSAP) ---------- */
+if (G) {
+  const tl = G.timeline({ defaults: { ease: 'expo.out', duration: 1.3 } });
+  tl.from('.mark-top span', { yPercent: -110 }, .15)
+    .from('.mark-bot span', { yPercent: 110 }, .15)
+    .from('#markGap', { opacity: 0, y: 10, duration: 1 }, .7)
+    .from('.hero-title .w span', { yPercent: 110, stagger: .1, duration: 1.1 }, .75)
+    .from(['#heroEyebrow', '#heroSub', '#heroCta', '#featBtn', '.scroll-cue'], { y: 24, opacity: 0, stagger: .08, duration: .9, clearProps: 'opacity,transform' }, .95)
+    .from('.fl', { scale: .7, opacity: 0, stagger: .12, duration: 1.1, clearProps: 'opacity,scale' }, 1.1);
+
+  if (ST) {
+    G.to('.mark-top', { xPercent: -7, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: .6 } });
+    G.to('.mark-bot', { xPercent: 7, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: .6 } });
+    G.to('.hero-inner', { y: 70, opacity: .25, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: .6 } });
+
+    $$('[data-reveal]').forEach(el => G.from(el, { y: 36, opacity: 0, duration: 1, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
+
+    const pillars = $$('.pillar');
+    pillars.forEach((p, i) => {
+      if (i === pillars.length - 1) return;
+      G.to(p, { scale: .94, opacity: .65, ease: 'none', scrollTrigger: { trigger: pillars[i + 1], start: 'top 85%', end: 'top 25%', scrub: true } });
+    });
+    G.from('#footMark', { yPercent: 100, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.footer', start: 'top 85%', once: true } });
+  }
+
+  if (FINE) {
+    // magnetic buttons
+    $$('.btn').forEach(b => {
+      b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); G.to(b, { x: (e.clientX - r.left - r.width / 2) * .22, y: (e.clientY - r.top - r.height / 2) * .3 - 2, duration: .4, ease: 'power3' }); });
+      b.addEventListener('mouseleave', () => G.to(b, { x: 0, y: 0, duration: .6, ease: 'elastic.out(1,.5)' }));
+    });
+    // floating covers parallax
+    const fls = $$('.fl').map(el => ({ el, d: Number(el.dataset.depth) || 10, fx: G.quickTo(el, 'x', { duration: .9, ease: 'power3' }), fy: G.quickTo(el, 'y', { duration: .9, ease: 'power3' }) }));
+    $('#hero').addEventListener('mousemove', e => {
+      const mx = e.clientX / innerWidth - .5, my = e.clientY / innerHeight - .5;
+      fls.forEach(f => { f.fx(mx * f.d); f.fy(my * f.d); });
+    }, { passive: true });
+  }
+} else {
+  // no motion: make sure everything rests in its final state
+  $$('.dayb,.day').forEach(d => d.classList.add('on'));
+}
+})();
+</script>
+
+</body>
+</html>
